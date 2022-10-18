@@ -33,12 +33,22 @@ interface Empty<T>{
     //
 }
 
-var empty1:Empty<string>;
-var empty2:Empty<number>;
+let empty1:Empty<string>;
+let empty2:Empty<number>;
 
+// 인터페이스 값이 비어있기 때문에 제네릭 타입이 달라도 동일하게 처리됨
 empty1 = empty2;
 empty2 = empty1;
 
 interface NotEmpty<T>{
-
+    data:T;
 }
+
+let notEmpty1: NotEmpty<string>;
+let notEmpty2: NotEmpty<number>;
+
+//data 값 안에 다른 제네릭 타입이 할당되었기 때문에 더이상 동일하게 처리되지 않음
+notEmpty1 = notEmpty2;
+notEmpty2 = notEmpty1;
+
+
