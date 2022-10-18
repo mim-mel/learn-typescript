@@ -23,7 +23,17 @@ interface Dropdown2<T> {
   title: string;
 }
 
-var shoppingItem: Dropdown2<string> = {
+interface DetailDropdown<K> extends Dropdown2<K> {
+  description: string;
+  tag: K;
+}
+
+var shoppingItem2: DetailDropdown<string> = {
   value: 'abc',
   title: 'hello',
+  description: 'a',
+  tag: 'div',
 };
+
+// Best Common Type = 가장 근접한 타입을 추론함
+var arr1 = [1, 2, true, true, 'a'];
